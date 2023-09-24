@@ -25,10 +25,10 @@ public class CalculatorTest {
 //        assert 4 == Calculator.calculation(8, 2, '/');
 //        assert 9 == Calculator.calculation(3, 2, '*'); // намеренная ошибка
 
-        assertThat(Calculator.calculation(2, 2, '+').isEqualTo(4));
-        assertThat(Calculator.calculation(4, 2, '-').isEqualTo(2));
-        assertThat(Calculator.calculation(8, 2, '/').isEqualTo(4));
-        assertThat(Calculator.calculation(3, 2, '*').isEqualTo(8)); // намеренная ошибка
+        assertThat(Calculator.calculation(2, 2, '+')).isEqualTo(4);
+        assertThat(Calculator.calculation(4, 2, '-')).isEqualTo(2);
+        assertThat(Calculator.calculation(8, 2, '/')).isEqualTo(4);
+        assertThat(Calculator.calculation(3, 2, '*')).isEqualTo(8); // намеренная ошибка
 
         assertThatThrownBy(() -> Calculator.calculation(8, 4, '_'))
                 .isInstanceOf(IllegalStateException.class);
