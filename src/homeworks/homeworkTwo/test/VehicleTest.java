@@ -2,6 +2,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import homeworks.homeworkTwo.main.Car;
 import homeworks.homeworkTwo.main.Motorcycle;
+import homeworks.homeworkTwo.main.Vehicle;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.*;
 import seminars.seminarTwo.main.Cart;
@@ -19,7 +20,7 @@ public class VehicleTest {
 
     @Test
     void isVehicleTest() {
-        assertThat(car).isInstanceOf(Car.class);
+        assertThat(car).isInstanceOf(Vehicle.class);
     }
 
     @Test
