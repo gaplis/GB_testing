@@ -1,14 +1,15 @@
-import lections.lectionTwo.main.Calculator;
 import org.junit.jupiter.api.Test;
+import lections.lectionThree.main.Calculator;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-public class CalculatorTest {
+public class CalculatorTest3 {
 
     @Test
     void evaluatesExpression() {
@@ -48,7 +49,7 @@ public class CalculatorTest {
         InputStream inputStream = System.in;
         System.setIn(in);
 
-        lections.lectionTwo.main.Calculator.getOperand();
+        lections.lectionThree.main.Calculator.getOperand();
 
         System.out.println(testedValue);
         System.setIn(inputStream);
@@ -63,11 +64,16 @@ public class CalculatorTest {
         System.setIn(in);
         System.setOut(new PrintStream(out));
 
-        assertThatThrownBy(() -> lections.lectionTwo.main.Calculator.getOperand())
+        assertThatThrownBy(() -> lections.lectionThree.main.Calculator.getOperand())
                 .isInstanceOf(IllegalStateException.class)
                 .describedAs("Ошибка в вводимых данных");
 
         System.setIn(inputStream);
         System.setOut(null);
+    }
+
+    @Test
+    void computeCircleRadiusWorksCorrectly() {
+        assertThat(Calculator.computeAreaCircle(10)).isEqualTo(314.1592653589793);
     }
 }
