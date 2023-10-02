@@ -205,7 +205,7 @@ class ShopTest {
     @ValueSource(ints = {-100, 100})
     void incorrectProductSelectionCausesException(int i) {
         assertThatThrownBy(() -> cart.addProductToCartByID(i))
-                .isInstanceOf(RuntimeException.class).describedAs("Не найден продукт с id: " + i);
+                .isInstanceOf(RuntimeException.class).hasMessage("Не найден продукт с id: " + i);
 
     }
 
@@ -220,7 +220,7 @@ class ShopTest {
     @Test
     void incorrectProductRemoveCausesException() {
         assertThatThrownBy(() -> cart.removeProductByID(1))
-                .isInstanceOf(RuntimeException.class).describedAs("Не найден продукт с id: " + 1);
+                .isInstanceOf(RuntimeException.class).hasMessage("Не найден продукт с id: " + 1);
 
     }
 
